@@ -1,0 +1,16 @@
+mod.wizards.newContentElement.wizardItems {
+    // add the content element to the tab "common"
+    common {
+      elements {
+        myextension_newcontentelement {
+          iconIdentifier = content-text
+          title = 'Custom Text Media'
+          description = 'Custom Text Media'
+          tt_content_defValues {
+            CType = myextension_newcontentelement
+          }
+        }
+      }
+      show := addToList(myextension_newcontentelement)
+    }
+  }

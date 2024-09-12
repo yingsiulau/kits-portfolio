@@ -1,0 +1,301 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript">
+
+
+################
+#### HELPER ####
+################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kitjan_portfolio/Configuration/TypoScript/Helper/DynamicContent.typoscript">
+
+
+##############
+#### PAGE ####
+##############
+page = PAGE
+page {
+    typeNum = 0
+    shortcutIcon = EXT:kitjan_portfolio/Resources/Public/Icons/favicon.ico
+
+    10 = FLUIDTEMPLATE
+    10 {
+        # Template names will be generated automatically by converting the applied
+        # backend_layout, there is no explicit mapping necessary anymore.
+        #
+        # BackendLayout Key
+        # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        #
+        # Backend Record
+        # uid: 1 -> 1.html
+        #
+        # Database Entry
+        # value: -1 -> None.html
+        # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        templateName = TEXT
+        templateName {
+            cObject = TEXT
+            cObject {
+                data = pagelayout
+                required = 1
+                case = uppercamelcase
+                split {
+                    token = pagets__
+                    cObjNum = 1
+                    1.current = 1
+                }
+            }
+            ifEmpty = Default
+        }
+        templateRootPaths {
+            0 = EXT:kitjan_portfolio/Resources/Private/Templates/Page/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:kitjan_portfolio/Resources/Private/Partials/Page/
+            1 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:kitjan_portfolio/Resources/Private/Layouts/Page/
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = media
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                levels = 2
+                includeSpacer = 1
+                as = mainnavigation
+            }
+        }
+    }
+
+    meta {
+        viewport = {$page.meta.viewport}
+        robots = {$page.meta.robots}
+        apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+        description = {$page.meta.description}
+        description {
+            override.field = description
+        }
+        author = {$page.meta.author}
+        author {
+            override.field = author
+        }
+        keywords = {$page.meta.keywords}
+        keywords {
+            override.field = keywords
+        }
+        X-UA-Compatible = {$page.meta.compatible}
+        X-UA-Compatible {
+            attribute = http-equiv
+        }
+
+        # OpenGraph Tags
+        og:title {
+            attribute = property
+            field = title
+        }
+        og:site_name {
+            attribute = property
+            data = TSFE:tmpl|setup|sitetitle
+        }
+        og:description = {$page.meta.description}
+        og:description {
+            attribute = property
+            field = description
+        }
+        og:image {
+            attribute = property
+            stdWrap.cObject = FILES
+            stdWrap.cObject {
+                references {
+                    data = levelfield:-1, media, slide
+                }
+                maxItems = 1
+                renderObj = COA
+                renderObj {
+                    10 = IMG_RESOURCE
+                    10 {
+                        file {
+                            import.data = file:current:uid
+                            treatIdAsReference = 1
+                            width = 1280c
+                            height = 720c
+                        }
+                        stdWrap {
+                            typolink {
+                                parameter.data = TSFE:lastImgResourceInfo|3
+                                returnLast = url
+                                forceAbsoluteUrl = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    includeCSSLibs {
+
+    }
+
+    includeCSS {
+        kitjan_portfolio_layout = EXT:kitjan_portfolio/Resources/Public/Css/layout.min.css
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    includeJSFooter {
+        kitjan_portfolio_scripts = EXT:kitjan_portfolio/Resources/Public/JavaScript/Dist/scripts.js
+    }
+}
+
+
+################
+#### CONFIG ####
+################
+config {
+    absRefPrefix = auto
+    no_cache = {$config.no_cache}
+    uniqueLinkVars = 1
+    pageTitleFirst = 1
+    linkVars = L
+    prefixLocalAnchors = {$config.prefixLocalAnchors}
+    renderCharset = utf-8
+    metaCharset = utf-8
+    doctype = html5
+    removeDefaultJS = {$config.removeDefaultJS}
+    inlineStyle2TempFile = 1
+    admPanel = {$config.admPanel}
+    debug = 0
+    cache_period = 86400
+    sendCacheHeaders = {$config.sendCacheHeaders}
+    intTarget =
+    extTarget =
+    disablePrefixComment = 1
+    index_enable = 1
+    index_externals = 1
+    index_metatags = 1
+    headerComment = {$config.headerComment}
+
+    // Disable Image Upscaling
+    noScaleUp = 1
+
+    // Compression and Concatenation of CSS and JS Files
+    compressJs = 0
+    compressCss = 0
+    concatenateJs = 0
+    concatenateCss = 0
+}
+
+page.config.contentObjectExceptionHandler = 0
+
+// default/general configuration (will add 'children_<colPos>' variable to processedData for each colPos in container
+tt_content.b13-2cols-with-header-container < lib.contentElement
+tt_content.b13-2cols-with-header-container {
+    templateName = 2ColsWithHeader
+    templateRootPaths {
+        10 = EXT:kitjan_portfolio/Resources/Private/Templates/ContentElements
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+// if needed you can use ContainerProcessor with explicitly set colPos/variable values
+tt_content.b13-2cols-with-header-container < lib.contentElement
+tt_content.b13-2cols-with-header-container {
+    templateName = 2ColsWithHeader
+    templateRootPaths {
+        10 = EXT:kitjan_portfolio/Resources/Private/Templates/ContentElements
+    }
+    dataProcessing {
+        200 = B13\Container\DataProcessing\ContainerProcessor
+        200 {
+            colPos = 200
+            as = children_200
+        }
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = children_201
+        }
+        202 = B13\Container\DataProcessing\ContainerProcessor
+        202 {
+            colPos = 202
+            as = children_202
+        }
+    }
+}
+
+tt_content.my-custom-container = COA
+tt_content.my-custom-container {
+    10 =< lib.contentElement
+    10 {
+        templateName = MyCustomContainer
+        templateRootPaths {
+            0 = EXT:kitjan_portfolio/Resources/Private/Templates/
+        }
+        partialRootPaths {
+            0 = EXT:kitjan_portfolio/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+            0 = EXT:kitjan_portfolio/Resources/Private/Layouts/
+        }
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        }
+    }
+}
+
+lib.contentElement {
+  templateRootPaths.200 = EXT:kitjan_portfolio/Resources/Private/Templates/
+}
+
+tt_content {
+  myextension_newcontentelement =< lib.contentElement
+  myextension_newcontentelement {
+    templateName = BasicContent
+  }
+}
+
+tt_content.myextension_newcontentelement = FLUIDTEMPLATE
+tt_content.myextension_newcontentelement {
+    templateName = BasicContent
+    templateRootPaths {
+        10 = EXT:kitjan_portfolio/Resources/Private/Templates/ContentElements/
+    }
+    dataProcessing {
+        # Process for YouTube ID extraction
+        10 = Playground\KitjanPortfolio\DataProcessing\YoutubeIdProcessor
+        10 {
+            fieldName = my_custom_media
+            as = youtubeVideoId
+        }
+
+        # Process for handling file references
+        20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        20 {
+            references.fieldName = my_custom_image
+            as = files
+            maxItems = 1
+        }
+    }
+}
+
+
+

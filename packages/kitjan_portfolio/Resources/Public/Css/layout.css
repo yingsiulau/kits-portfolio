@@ -1,0 +1,18 @@
+.yellow {
+  background-color: yellow;
+}
+
+.custom-textmedia {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.custom-text {
+    margin-bottom: 10px;
+}
+
+.custom-media img {
+    max-width: 100%;
+    height: auto;
+}

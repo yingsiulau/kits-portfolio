@@ -1,0 +1,38 @@
+
+<f:debug>{data}</f:debug>
+<f:debug>{files}</f:debug>
+
+
+
+<f:if condition="{youtubeVideoId}">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/{youtubeVideoId}?autohide=1&amp;controls=1&amp;enablejsapi=1&amp;
+  allowfullscreen"
+    width="600"
+    height="337"
+    class="video- embed-item"
+    allow="fullscreen"
+  ></iframe>
+</f:if>
+
+
+
+<f:if condition="{files.0}">
+    <div class="custom-image">
+        <f:media file="{files.0}" alt="{data.header}" title="{data.header}" />
+    </div>
+    <p>Image Name: {imageName}</p>
+</f:if>
+
+<f:section name="Main">
+  <article class="custom-textmedia">
+    <!-- Custom Header -->
+    <h2>{data.header}</h2>
+
+    <!-- Custom Text -->
+    <div class="custom-text">
+      <f:format.html>{data.my_custom_text}</f:format.html>
+    </div>
+
+  </article>
+</f:section>

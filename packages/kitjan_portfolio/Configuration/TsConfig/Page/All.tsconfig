@@ -1,0 +1,7 @@
+#
+# PageTS for Kitjan Portfolio
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kitjan_portfolio/Configuration/TsConfig/Page/RTE.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kitjan_portfolio/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kitjan_portfolio/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kitjan_portfolio/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">

@@ -1,0 +1,28 @@
+{
+  "name": "playground/kitjan-portfolio",
+  "type": "typo3-cms-extension",
+  "description": "",
+  "homepage": "https://yingsiulau.github.io/portfolio/#/aboutme",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "keywords": [
+    "TYPO3 CMS"
+  ],
+  "version": "1.0.0",
+  "require": {
+    "typo3/cms-core": "^12.4",
+    "typo3/cms-rte-ckeditor": "^12.4",
+    "typo3/cms-fluid-styled-content": "^12.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Playground\\KitjanPortfolio\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "kitjan_portfolio"
+    }
+  }
+}
