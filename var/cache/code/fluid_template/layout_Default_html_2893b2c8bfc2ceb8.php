@@ -21,6 +21,10 @@ class layout_Default_html_2893b2c8bfc2ceb8 extends \TYPO3Fluid\Fluid\Core\Compil
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'v' => 
+  array (
+    0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
+  ),
 ));
     }
     /**

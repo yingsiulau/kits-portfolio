@@ -21,6 +21,10 @@ class partial_Header_SubHeader_fd82d88fddeb455c extends \TYPO3Fluid\Fluid\Core\C
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'v' => 
+  array (
+    0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
+  ),
 ));
     }
     /**

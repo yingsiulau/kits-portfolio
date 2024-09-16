@@ -21,6 +21,14 @@ class partial_Footer_All_769b9dbc03a4b23a extends \TYPO3Fluid\Fluid\Core\Compile
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'v' => 
+  array (
+    0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
+  ),
+  'ce' => 
+  array (
+    0 => 'TYPO3\\CMS\\FluidStyledContent\\ViewHelpers',
+  ),
 ));
     }
     /**

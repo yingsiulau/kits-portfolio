@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9244dd9ca081117a44e9eaa174b90f8e",
+    "content-hash": "95de6288e363ccb292e15c29f2111345",
     "packages": [
         {
             "name": "b13/container",
@@ -973,6 +973,78 @@
                 "source": "https://github.com/firebase/php-jwt/tree/v6.10.1"
             },
             "time": "2024-05-18T18:05:11+00:00"
+        },
+        {
+            "name": "fluidtypo3/vhs",
+            "version": "7.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FluidTYPO3/vhs.git",
+                "reference": "44252a4688cd884168a8ea6401e6972f864b1e41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FluidTYPO3/vhs/zipball/44252a4688cd884168a8ea6401e6972f864b1e41",
+                "reference": "44252a4688cd884168a8ea6401e6972f864b1e41",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^7.4.0 || ^8",
+                "typo3/cms-backend": "^10 || ^11 || ^12 || dev-master",
+                "typo3/cms-core": "^10 || ^11 || ^12 || dev-master",
+                "typo3/cms-extbase": "^10 || ^11 || ^12 || dev-master",
+                "typo3/cms-fluid": "^10 || ^11 || ^12 || dev-master",
+                "typo3/cms-frontend": "^10 || ^11 || ^12 || dev-master"
+            },
+            "replace": {
+                "typo3-ter/vhs": "self.version"
+            },
+            "require-dev": {
+                "fluidtypo3/development": "^5",
+                "mikey179/vfsstream": "^1.6",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpstan/phpstan": "^1.8",
+                "phpunit/phpunit": "^5.7 || ^9.5",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "suggest": {
+                "ext-json": "Enable use of v:format.json.encode and v:format.json.decode",
+                "ext-tidy": "Allows to make use of the tidy ViewHelper v:format.tidy",
+                "ext-zlib": "Enable use of v:format.placeholder.lipsum with default lipsum text"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "vhs"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FluidTYPO3\\Vhs\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "This is a collection of ViewHelpers for performing rendering tasks that are not natively provided by TYPO3's Fluid templating engine.",
+            "homepage": "https://fluidtypo3.org",
+            "keywords": [
+                "TYPO3 CMS",
+                "fedext",
+                "fluid",
+                "templating",
+                "utility",
+                "viewhelper"
+            ],
+            "support": {
+                "chat": "https://typo3.slack.com/archives/C79562JES",
+                "docs": "https://viewhelpers.fluidtypo3.org/fluidtypo3/vhs/",
+                "issues": "https://github.com/FluidTYPO3/vhs/issues",
+                "source": "https://github.com/FluidTYPO3/vhs"
+            },
+            "time": "2024-08-08T10:54:24+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

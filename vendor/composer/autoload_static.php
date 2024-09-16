@@ -137,6 +137,7 @@ class ComposerStaticInite7315fd7b284f56d5861afec7a26a568
         ),
         'F' => 
         array (
+            'FluidTYPO3\\Vhs\\' => 15,
             'Firebase\\JWT\\' => 13,
         ),
         'E' => 
@@ -494,6 +495,10 @@ class ComposerStaticInite7315fd7b284f56d5861afec7a26a568
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'FluidTYPO3\\Vhs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fluidtypo3/vhs/Classes',
         ),
         'Firebase\\JWT\\' => 
         array (

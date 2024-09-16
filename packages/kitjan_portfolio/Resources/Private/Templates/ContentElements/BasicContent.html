@@ -1,38 +1,79 @@
 
-<f:debug>{data}</f:debug>
-<f:debug>{files}</f:debug>
-
-
-
 <f:if condition="{youtubeVideoId}">
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/{youtubeVideoId}?autohide=1&amp;controls=1&amp;enablejsapi=1&amp;
-  allowfullscreen"
-    width="600"
-    height="337"
-    class="video- embed-item"
-    allow="fullscreen"
-  ></iframe>
+  <div class="card w-100" style="border-radius: 12px;">
+    <div
+      class="{f:if(condition: data.aspect_ratio, then: 'sixteen-nine', else: 'four-three')}"
+      style="position: relative; width: 100%; padding-bottom: 56.25%"
+    >
+      <iframe
+        src="https://www.youtube.com/embed/{youtubeVideoId}"
+        style="
+          border-radius: 11px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        "
+        allowfullscreen
+        class="embed-responsive-item"
+      ></iframe>
+    </div>
+  </div>
 </f:if>
 
+<div class="col no-margin no-padding" >
+  <!-- If there is an image/file -->
+  <f:if condition="{files.0}">
+    <f:then>
+      <!-- Link wrapping the entire card -->
+      <f:link.typolink parameter="{data.my_custom_link}" class="card-link">
+        <div
+            class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg {f:if(condition: data.aspect_ratio, then: 'sixteen-nine', else: 'four-three')}"
+            style="height: auto; position: relative;"
+        >
+          <!-- Image inside the card -->
+          <img
+            src="{files.0.publicUrl}"
+            alt="{data.my_custom_header}"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 4px;
+            "
+          />
 
+          <!-- Content overlay (Text, Hashtags, etc.) -->
+          <div
+            class="d-flex flex-column justify-content-end p-4 text-white text-shadow-1 {f:if(condition: data.my_custom_header, then: 'overlay-dark', else: 'overlay-transparent')}"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+          >
+            <f:if condition="{data.my_custom_header}">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                {data.my_custom_header}
+              </h3>
+            </f:if>
 
-<f:if condition="{files.0}">
-    <div class="custom-image">
-        <f:media file="{files.0}" alt="{data.header}" title="{data.header}" />
-    </div>
-    <p>Image Name: {imageName}</p>
-</f:if>
-
-<f:section name="Main">
-  <article class="custom-textmedia">
-    <!-- Custom Header -->
-    <h2>{data.header}</h2>
-
-    <!-- Custom Text -->
-    <div class="custom-text">
-      <f:format.html>{data.my_custom_text}</f:format.html>
-    </div>
-
-  </article>
-</f:section>
+            <li class="d-flex align-items-center me-3">
+              <small>{data.my_custom_text}</small>
+            </li>
+            <li class="d-flex align-items-center">
+              <small>{data.my_custom_hashtags}</small>
+            </li>
+          </div>
+        </div>
+      </f:link.typolink>
+    </f:then>
+  </f:if>
+</div>

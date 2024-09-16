@@ -21,6 +21,10 @@ class partial_Header_Date_6afade2360c635c0 extends \TYPO3Fluid\Fluid\Core\Compil
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'v' => 
+  array (
+    0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
+  ),
 ));
     }
     /**

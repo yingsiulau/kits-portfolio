@@ -21,6 +21,10 @@ class partial_DropIn_Before_All_6600d1e7a303a932 extends \TYPO3Fluid\Fluid\Core\
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'v' => 
+  array (
+    0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
+  ),
 ));
     }
     /**

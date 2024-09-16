@@ -21,6 +21,10 @@ class partial_Header_All_d89c075c32df2930 extends \TYPO3Fluid\Fluid\Core\Compile
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'v' => 
+  array (
+    0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
+  ),
 ));
     }
     /**

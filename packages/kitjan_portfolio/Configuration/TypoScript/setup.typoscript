@@ -239,25 +239,10 @@ tt_content.b13-2cols-with-header-container {
             colPos = 202
             as = children_202
         }
-    }
-}
-
-tt_content.my-custom-container = COA
-tt_content.my-custom-container {
-    10 =< lib.contentElement
-    10 {
-        templateName = MyCustomContainer
-        templateRootPaths {
-            0 = EXT:kitjan_portfolio/Resources/Private/Templates/
-        }
-        partialRootPaths {
-            0 = EXT:kitjan_portfolio/Resources/Private/Partials/
-        }
-        layoutRootPaths {
-            0 = EXT:kitjan_portfolio/Resources/Private/Layouts/
-        }
-        dataProcessing {
-            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        203 = B13\Container\DataProcessing\ContainerProcessor
+        203 {
+            colPos = 203
+            as = children_203
         }
     }
 }
@@ -280,8 +265,7 @@ tt_content.myextension_newcontentelement {
         10 = EXT:kitjan_portfolio/Resources/Private/Templates/ContentElements/
     }
     dataProcessing {
-        # Process for YouTube ID extraction
-        10 = Playground\KitjanPortfolio\DataProcessing\YoutubeIdProcessor
+        10 = Playground\KitjanPortfolio\Data\YoutubeIdProcessor
         10 {
             fieldName = my_custom_media
             as = youtubeVideoId
@@ -297,5 +281,40 @@ tt_content.myextension_newcontentelement {
     }
 }
 
+// default/general configuration (will add 'children_<colPos>' variable to processedData for each colPos in container
+tt_content.b13-detail < lib.contentElement
+tt_content.b13-detail {
+    templateName = Detail
+    templateRootPaths {
+        10 = EXT:kitjan_portfolio/Resources/Private/Templates/ContentElements
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
 
-
+// if needed you can use ContainerProcessor with explicitly set colPos/variable values
+tt_content.b13-detail < lib.contentElement
+tt_content.b13-detail {
+    templateName = Detail
+    templateRootPaths {
+        10 = EXT:kitjan_portfolio/Resources/Private/Templates/ContentElements
+    }
+    dataProcessing {
+        204 = B13\Container\DataProcessing\ContainerProcessor
+        204 {
+            colPos = 204
+            as = children_204
+        }
+        205 = B13\Container\DataProcessing\ContainerProcessor
+        205 {
+            colPos = 205
+            as = children_205
+        }
+        206 = B13\Container\DataProcessing\ContainerProcessor
+        206 {
+            colPos = 206
+            as = children_206
+        }
+    }
+}

@@ -1,21 +1,18 @@
-<ul class="yellow">
+<header class="p-3 new-background-color">
+  <ul class="nav nav-pills">
     <f:for each="{mainnavigation}" as="mainnavigationItem">
-        <li class="{f:if(condition: mainnavigationItem.active, then:'active')}">
-            <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">
-                {mainnavigationItem.title}
-            </a>
-            <f:if condition="{mainnavigationItem.children}">
-                <ul>
-                    <f:for each="{mainnavigationItem.children}" as="child">
-                        <li class="{f:if(condition: child.active, then:'active')}">
-                            <a href="{child.link}" target="{child.target}" title="{child.title}">
-                                {child.title}
-                            </a>
-                        </li>
-                    </f:for>
-                </ul>
-            </f:if>
-        </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-secondary {f:if(condition: mainnavigationItem.active, then:'text-white')}"
+          href="{mainnavigationItem.link}"
+          target="{mainnavigationItem.target}"
+          title="{mainnavigationItem.title}"
+        >
+          {mainnavigationItem.title}
+        </a>
+      </li>
     </f:for>
-</ul>
+  </ul>
+</header>
+
 <f:render section="Main" />

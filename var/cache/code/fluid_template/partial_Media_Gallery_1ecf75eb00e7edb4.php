@@ -21,6 +21,10 @@ class partial_Media_Gallery_1ecf75eb00e7edb4 extends \TYPO3Fluid\Fluid\Core\Comp
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'v' => 
+  array (
+    0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
+  ),
   'ce' => 
   array (
     0 => 'TYPO3\\CMS\\FluidStyledContent\\ViewHelpers',

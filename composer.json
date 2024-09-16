@@ -15,6 +15,7 @@
   },
   "require": {
     "b13/container": "^2.3",
+    "fluidtypo3/vhs": "^7.0",
     "playground/kitjan-portfolio": "^1.0",
     "typo3/cms-backend": "^12.4.0",
     "typo3/cms-belog": "^12.4.0",

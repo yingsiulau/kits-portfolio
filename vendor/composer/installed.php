@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'typo3/cms-base-distribution',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '653abc22cd459003e8da3a69111cd633ed05dead',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -139,6 +139,15 @@
             'reference' => '500501c2ce893c824c801da135d02661199f60c5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../firebase/php-jwt',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'fluidtypo3/vhs' => array(
+            'pretty_version' => '7.0.6',
+            'version' => '7.0.6.0',
+            'reference' => '44252a4688cd884168a8ea6401e6972f864b1e41',
+            'type' => 'typo3-cms-extension',
+            'install_path' => __DIR__ . '/../fluidtypo3/vhs',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -751,6 +760,12 @@
                 0 => '2.3.6',
             ),
         ),
+        'typo3-ter/vhs' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '7.0.6',
+            ),
+        ),
         'typo3/class-alias-loader' => array(
             'pretty_version' => 'v1.1.4',
             'version' => '1.1.4.0',
@@ -776,9 +791,9 @@
             'dev_requirement' => false,
         ),
         'typo3/cms-base-distribution' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '653abc22cd459003e8da3a69111cd633ed05dead',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

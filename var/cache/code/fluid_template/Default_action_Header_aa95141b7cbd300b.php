@@ -21,6 +21,10 @@ class Default_action_Header_aa95141b7cbd300b extends \TYPO3Fluid\Fluid\Core\Comp
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'v' => 
+  array (
+    0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
+  ),
 ));
     }
     /**

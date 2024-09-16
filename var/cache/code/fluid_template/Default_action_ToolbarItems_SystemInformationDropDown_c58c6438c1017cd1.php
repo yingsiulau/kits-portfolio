@@ -21,6 +21,10 @@ class Default_action_ToolbarItems_SystemInformationDropDown_c58c6438c1017cd1 ext
   array (
     0 => 'TYPO3\\CMS\\Form\\ViewHelpers',
   ),
+  'v' => 
+  array (
+    0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
+  ),
 ));
     }
     /**

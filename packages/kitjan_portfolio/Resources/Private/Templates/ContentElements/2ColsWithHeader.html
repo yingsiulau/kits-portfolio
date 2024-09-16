@@ -1,26 +1,40 @@
-<f:debug>{_all}</f:debug>
-
-
-<div class="container text-center">
+<div class="container px-4 py-5">
   <div class="row">
-    <div class="col">
+    <div class="col mx-4">
+      <!-- Left and Right margins added -->
       <f:for each="{children_200}" as="record">
-        <f:format.raw> {record.renderedContent} </f:format.raw>
+        <f:format.raw>{record.renderedContent}</f:format.raw>
       </f:for>
-      <div class="col"></div>
     </div>
-    <div class="container text-center">
-      <div class="row">
-        <div class="col">
-          <f:for each="{children_201}" as="record">
-            <f:format.raw> {record.renderedContent} </f:format.raw>
-          </f:for>
-        </div>
-        <div class="col">
-          <f:for each="{children_202}" as="record">
-            <f:format.raw> {record.renderedContent} </f:format.raw>
-          </f:for>
-        </div>
+  </div>
+
+  <div class="container px-4">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <!-- First Column -->
+      <div class="col no-margin">
+        <f:for each="{children_201}" as="record">
+          <div style="padding: 12px 0">
+            <f:format.raw>{record.renderedContent}</f:format.raw>
+          </div>
+        </f:for>
+      </div>
+
+      <!-- Second Column -->
+      <div class="col no-margin">
+        <f:for each="{children_203}" as="record">
+          <div style="padding: 12px 0">
+            <f:format.raw>{record.renderedContent}</f:format.raw>
+          </div>
+        </f:for>
+      </div>
+
+      <!-- Third Column -->
+      <div class="col no-margin">
+        <f:for each="{children_202}" as="record">
+          <div style="padding: 12px 0">
+            <f:format.raw>{record.renderedContent}</f:format.raw>
+          </div>
+        </f:for>
       </div>
     </div>
   </div>

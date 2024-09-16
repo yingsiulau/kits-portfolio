@@ -30,6 +30,9 @@ return [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
         ],
+        'vhs' => [
+            'disableAssetHandling' => '0',
+        ],
     ],
     'FE' => [
         'cacheHash' => [
