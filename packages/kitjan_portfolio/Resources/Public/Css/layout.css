@@ -1,7 +1,3 @@
-.yellow {
-  background-color: yellow;
-}
-
 .custom-textmedia {
   display: flex;
   flex-direction: column;
@@ -15,10 +11,6 @@
 .custom-media img {
   max-width: 100%;
   height: auto;
-}
-
-.container-margin {
-  background-color: yellow;
 }
 
 /* unvisited link */
@@ -67,20 +59,22 @@ a:active {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-.sixteen-nine{
-    height: 200px;
+.sixteen-nine {
+  height: 200px;
   aspect-ratio: 16/9 !important;
 }
 
-.four-three{
+.four-three {
   aspect-ratio: 4/3 !important;
 }
 
-.new-background-color{
+.new-background-color {
   background-color: darkred !important;
 }
 
-
+.if-card > .card {
+  margin-bottom: 17px;
+}
 
 @media (max-width: 992px) {
   .custom-flex {

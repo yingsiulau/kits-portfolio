@@ -25,10 +25,6 @@ class partial_DropIn_After_All_c02fad317ddc01b8 extends \TYPO3Fluid\Fluid\Core\C
   array (
     0 => 'FluidTYPO3\\Vhs\\ViewHelpers',
   ),
-  'ce' => 
-  array (
-    0 => 'TYPO3\\CMS\\FluidStyledContent\\ViewHelpers',
-  ),
 ));
     }
     /**

@@ -187,10 +187,9 @@ $GLOBALS['TCA']['tt_content']['types']['myextension_newcontentelement'] = [
                 ['name' => 'header', 'colPos' => 204, 'colspan' => 2, 'allowed' => ['CType' => 'header, textmedia, my_custom_textmedia']],
                 ['name' => 'description', 'colPos' => 205, 'colspan' => 1, 'allowed' => ['CType' => 'header, textmedia, my_custom_textmedia']]
             ],
-            // Second row: two columns (left and right)
             [
                 ['name' => 'images', 'colPos' => 206, 'allowed' => ['CType' => 'header, textmedia, my_custom_textmedia']],
             ]
-        ] // grid configuration
+        ]
     )
 );
